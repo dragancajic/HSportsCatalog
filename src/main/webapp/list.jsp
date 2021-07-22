@@ -44,6 +44,12 @@
 			</tr>
 			<tr>
 				<td width="100%" colspan="2">
+					<!-- Now, within the Expression Language (EL), we do have access to implicit objects: -->
+					${pageContext.request.contextPath}
+					${param.name}
+					${cookie.someCookie.value}
+					<!-- We can also reference methods within the Expression Language (EL): -->
+					<h3>Item Count: ${items.size() * 2}</h3>
 					<table width="100%" align="left"
 						cellpadding="0" cellspacing="0" border="0">
 						<tbody>
