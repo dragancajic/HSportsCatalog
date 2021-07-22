@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,10 +48,23 @@
 						cellpadding="0" cellspacing="0" border="0">
 						<tbody>
 							<tr>
-								<td align="center" width="100%" valign="middle">
-									${message}
-								</td>
+								<th>Name</th>
+								<th>Manufacturer</th>
+								<th>SKU</th>
 							</tr>
+							<c:forEach items="${items}" var="item">
+								<tr>
+									<td>
+										<c:out value="${item.name}" />
+									</td>
+									<td>
+										${item.manufacturer}
+									</td>
+									<td>
+										${item.sku}
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</td>
