@@ -12,13 +12,14 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class ParameterLoggingFilter
  */
-@WebFilter("/*")
-public class ParameterLoggingFilter implements Filter {
+//support for async
+@WebFilter(urlPatterns = "/*", asyncSupported = true)
+public class ParameterLoggingFilterAsync implements Filter {
 
     /**
      * Default constructor. 
      */
-    public ParameterLoggingFilter() {
+    public ParameterLoggingFilterAsync() {
         // TODO Auto-generated constructor stub
     }
 
