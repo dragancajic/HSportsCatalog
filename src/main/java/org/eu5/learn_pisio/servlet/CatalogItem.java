@@ -4,7 +4,7 @@ public class CatalogItem {
 
 	private String name;
 	private String manufacturer;
-	private String sku;
+	private String sku; // Stock Keeping Unit (SKU)
 
 	public CatalogItem(String name, String manufacturer, String sku) {
 		super();

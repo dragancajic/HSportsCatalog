@@ -31,8 +31,9 @@ public class CatalogServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.getWriter().append(request.getParameter("name"));
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append(request.getParameter("name"));
+		System.out.println("Response from GET Request!");
 	}
 
 	/**
@@ -63,6 +64,8 @@ public class CatalogServlet extends HttpServlet {
 				
 				RequestDispatcher dispather = request.getRequestDispatcher("list.jsp");
 				dispather.forward(request, response);
+				
+				System.out.println("RequestDispatcher from Servlet to JSP!");
 				/*
 				// start generating the actual response body
 				PrintWriter out = response.getWriter();
