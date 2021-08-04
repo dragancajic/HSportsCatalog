@@ -12,11 +12,39 @@
 		<h:form>
 			<div>
 				<h:outputLabel value="Product Name: " />
-				<h:inputText value="#{catalogItemFormBean.name}" />
+				<h:inputText id="productName" value="#{catalogItemFormBean.item.name}">
+				<!-- It's really important that we get the name right because this is what a customer
+					is going to see. So, to help us with that we can use the validateRegex tag within
+					the Facelets tag library: -->
+					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
+				</h:inputText>
+				<br />
+				<!-- another tag within the HTML tag library, message tag: -->
+				<h:message for="productName" />
+				<!-- for ID (e.g. productName), any validation issues will be displayed within this
+					message element for the productName. -->
 			</div>
 			<br />
-			<h:commandButton action="list" value="Submit" />
+			<div>
+				<h:outputLabel value="Manufacturer: " />
+				<h:inputText value="#{catalogItemFormBean.item.manufacturer}"></h:inputText>
+			</div>
+			<br />
+			<div>
+				<h:outputLabel value="Available Date: " />
+				<h:inputText value="#{catalogItemFormBean.item.availableDate}">
+					<f:convertDateTime type="localDate" pattern="dd-MM-yyyy" />
+				</h:inputText>
+			</div>
+			<br />
+			<div>
+				<h:outputLabel value="Description: " />
+				<h:inputTextarea value="#{catalogItemFormBean.item.description}"></h:inputTextarea>
+			</div>
+			<br />
+			<h:commandButton action="#{catalogItemFormBean.addItem()}" value="Submit" />
 		</h:form>
+		<br />
 	</ui:define>
 </ui:composition>
 </html>
