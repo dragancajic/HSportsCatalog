@@ -6,7 +6,10 @@
 
 <ui:composition template="/template.xhtml">
 	<ui:define name="pageTitle">#{msg['form.pageTitle']}</ui:define>
-	<ui:define name="pageHeader">#{msg['form.pageTitle']}</ui:define>
+	<ui:define name="pageHeader">
+		<h:link value="#{msg['form.pageTitle']}" outcome="form" /> |
+		<h:link value="#{msg['list.pageTitle']}" outcome="list" />
+	</ui:define>
 	<ui:define name="body">
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
 		<h:form id="item-form">

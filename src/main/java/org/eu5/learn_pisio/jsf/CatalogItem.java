@@ -5,13 +5,9 @@ import java.time.LocalDate;
 public class CatalogItem {
 
 	private Long itemId;
-	
 	private String name;
-	
 	private String manufacturer;
-	
 	private String description;
-	
 	private LocalDate availableDate; // from Java 8
 
 	public CatalogItem() {
